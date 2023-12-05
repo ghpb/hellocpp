@@ -3,5 +3,10 @@ CXXFLAGS=-Wall -std=c++14 -pedantic
 
 all: hello
 
-hello: hello.cpp
-    $(CXX) $(CXXFLAGS) hello.cpp -o hello
+hello: main.cpp
+	$(CXX) $(CXXFLAGS) $< -o hello
+
+.PHONY: clean
+
+clean:
+	-/bin/rm hello
